@@ -70,10 +70,127 @@ public class BST<E extends Comparable<E>> {
         }
     }
 
-    public void transFerPre(){
-        transFerPre();
+    public void PreStack(Node root){
+        StackLinked<Node> stack = new StackLinked<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+            if(cur.right!=null)
+                stack.push(cur.right);
+            if(cur.left!=null)
+                stack.push(cur.left);
+        }
     }
 
+    public void levelOrder(Node root){
+        QueueLinkedList<Node> queue = new QueueLinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            Node cur = queue.poll();
+            System.out.println(cur.e);
+            if(cur.left!=null)
+                queue.offer(cur.left);
+            if(cur.right!=null)
+                queue.offer(cur.right);
+        }
+    }
+
+    public E miniNum(){
+        if(size==0){
+            throw new IllegalArgumentException("empty");
+        }
+        return miniNum(root).e;
+    }
+    private Node miniNum(Node node){
+        if(node.left==null)
+            return node;
+        return miniNum(node.left);
+    }
+
+    public E maxNum(){
+        if(size==0){
+            throw new IllegalArgumentException("empty");
+        }
+        return maxNum(root).e;
+    }
+    private Node maxNum(Node node){
+        if(node.right==null)
+            return node;
+        return maxNum(node.right);
+    }
+
+    public E removeMin(){
+        E res = miniNum();
+        removeMin(root);
+        return res;
+    }
+    private Node removeMin(Node node){
+        if(node.left==null){
+            Node rightNode = node.right;
+            node.right = null;
+            size--;
+            return rightNode;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    public E removeMax(){
+        E res = maxNum();
+        removeMax(root);
+        return res;
+    }
+    private Node removeMax(Node node){
+        if(node.right==null){
+            Node leftNode = node.left;
+            node.left = null;
+            size--;
+            return leftNode;
+        }
+
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+    public void remove(E e){
+        root = remove(root,e);
+    }
+    private Node remove(Node node,E e){
+        if(node == null)
+            return null;
+        if(e.compareTo(node.e)<0){
+            node.left = remove(node.left,e);
+            return node;
+        }else if(e.compareTo(node.e)>0){
+            node.right = remove(node.right,e);
+            return node;
+        }
+        else {
+            if(node.left == null){
+                Node right = node.right;
+                node.right = null;
+                size--;
+                return right;
+            }
+            if(node.right == null){
+                Node left = node.left;
+                node.left = null;
+                size--;
+                return left;
+            }
+            Node newNode = miniNum(node.right);
+            newNode.right = removeMin(node.right);
+            newNode.left = node.left;
+            node.left = node.right = null;
+            return newNode;
+        }
+    }
+
+    public void transFerPre(){
+        transFerPre(root);
+    }
     private void transFerPre(Node node){
         if(node==null)
             return;

@@ -75,6 +75,12 @@ public class Main {
         }
         System.out.println(queueList.getFront());
 
+        BST<Integer> tree = new BST<>();
+        for(int i =0; i<10;i++)
+            tree.add(i);
+        System.out.println(tree);
+        tree.remove(6);
+        System.out.println(tree);
 
     }
 
