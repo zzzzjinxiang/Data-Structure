@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Array<E> {
 
     private E[] data;
@@ -117,14 +115,22 @@ public class Array<E> {
         }
     }
 
-    E get(int index){
+    public E get(int index){
         if(index<0||index>=size){
             throw new IllegalArgumentException("index is illegal");
         }
         return data[index];
     }
 
-    void set(int index,E e){
+    public E getLast(){
+        return get(size-1);
+    }
+
+    public E getFirst(){
+        return get(0);
+    }
+
+    public void set(int index,E e){
         if(index<0||index>=size){
             throw new IllegalArgumentException("index is illegal");
         }
