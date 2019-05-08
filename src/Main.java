@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -81,6 +83,31 @@ public class Main {
         System.out.println(tree);
         tree.remove(6);
         System.out.println(tree);
+
+        long startTime = System.nanoTime();
+        Array<String> words = new Array<>();
+        System.out.println(FileOperation.readFile("1.txt",words));
+        System.out.println("Total words " + words.getSize());
+        BSTSet<String> set = new BSTSet<>();
+
+        for(int i=0;i<words.getSize();i++)
+            set.add(words.get(i));
+        System.out.println(set.getSize());
+        long endTime = System.nanoTime();
+        System.out.println((endTime-startTime)/1000000000.0);
+
+        long startTime2 = System.nanoTime();
+        ArrayList<String> words2 = new ArrayList<>();
+        System.out.println(FileOperation.readFile("1.txt",words2));
+        System.out.println("Total words " + words2.size());
+        TreeSet<String> set2 = new TreeSet<>();
+
+        for(String word : words2)
+            set2.add(word);
+        System.out.println(set2.size());
+        long endTime2 = System.nanoTime();
+        System.out.println((endTime2-startTime2)/1000000000.0);
+
 
     }
 
