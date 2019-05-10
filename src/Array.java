@@ -10,6 +10,12 @@ public class Array<E> {
         data = (E[]) new Object[capacity];
         size = 0;
     }
+    public Array(E[] arr){
+        data = (E[])new Object[arr.length];
+        for(int i=0;i<arr.length;i++)
+            data[i] = arr[i];
+        size = arr.length;
+    }
 
     public Array(){
         this(10);
@@ -135,6 +141,14 @@ public class Array<E> {
             throw new IllegalArgumentException("index is illegal");
         }
         data[index]=e;
+    }
+
+    public void swap(int i,int j){
+        if(i<0||i>=size||j<0||j>=size)
+            throw new IllegalArgumentException("OutOfIndex");
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
     }
 
     @Override

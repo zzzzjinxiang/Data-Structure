@@ -1,5 +1,3 @@
-package origin;
-
 public interface map<K,V> {
 
     boolean isEmpty();

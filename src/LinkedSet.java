@@ -1,8 +1,3 @@
-package origin;
-
-import origin.Set;
-import origin.LinkedList;
-
 public class LinkedSet<E> implements Set<E> {
 
     private LinkedList<E> list;

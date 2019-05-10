@@ -1,7 +1,3 @@
-package origin;
-
-import origin.Array;
-
 public class MaxHeap<E extends Comparable<E>> {
     private Array<E> data;
     public MaxHeap(int capacity){

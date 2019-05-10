@@ -1,5 +1,3 @@
-package origin;
-
 import tools.FileOperation;
 
 import java.util.Random;
@@ -7,8 +5,8 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        //origin.Stack.origin.Array Test
-        //origin.Stack.origin.Array arr = new origin.Stack.origin.Array(20);
+        //Stack.Array Test
+        //Stack.Array arr = new Stack.Array(20);
         Array<Integer> arr = new Array<>();
         for(int i=-1;i<9;i++)
             arr.addLast(i);
@@ -22,7 +20,7 @@ public class Main {
         arr.remove(6);
         System.out.println(arr);
 
-        //origin.Stack Test
+        //Stack Test
         StackImpl<Integer> stackArray = new StackImpl<>();
         for(int i=0;i<6;i++){
             stackArray.push(i);
@@ -31,7 +29,7 @@ public class Main {
         stackArray.pop();
         System.out.println(stackArray.peek());
 
-        //origin.Queue Test
+        //Queue Test
         QueueImpl<Integer> queue = new QueueImpl<>();
         for(int i=0;i<5;i++)
             queue.offer(i);
@@ -40,7 +38,7 @@ public class Main {
         queue.poll();
         System.out.println(queue.getFront());
 
-        //origin.LinkedList Test
+        //LinkedList Test
         LinkedList<Integer> list = new LinkedList<>();
         for(int i=0;i<5;i++){
             list.addFirst(i);

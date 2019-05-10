@@ -1,7 +1,7 @@
 package tools;
 
-import origin.Set;
-import origin.Array;
+import Set;
+import Array;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

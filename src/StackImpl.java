@@ -1,17 +1,10 @@
-package origin;
-
-import origin.Queue;
-import origin.Array;
-
-public class QueueImpl<E> implements Queue<E> {
-
-    private Array<E> array;
-
-    public QueueImpl(int capacity){
-        array = new Array<>(capacity);
+public class StackImpl<E> implements Stack<E> {
+    Array<E> array;
+    public StackImpl(int capacity){
+        array = new Array<E>(capacity);
     }
 
-    public QueueImpl(){
+    public StackImpl(){
         this(10);
     }
 
@@ -25,31 +18,36 @@ public class QueueImpl<E> implements Queue<E> {
         return array.isEmpty();
     }
 
+    public int getCapacity(){
+        return array.getCapacity();
+    }
+
     @Override
-    public void offer(E e){
+    public void push(E e) {
         array.addLast(e);
     }
 
     @Override
-    public E poll(){
-        return array.removeFirst();
+    public E peek() {
+        return array.getLast();
     }
 
     @Override
-    public E getFront(){
-        return array.getFirst();
+    public E pop() {
+        return array.removeLast();
     }
+
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append("origin.Queue:front->");
-        res.append("[");
+        res.append("Stack:");
+        res.append('[');
         for(int i=0;i<array.getSize();i++){
             res.append(array.get(i));
             if(i!=array.getSize()-1)
-                res.append(",");
+                res.append(',');
         }
-        res.append("]");
+        res.append("] <- top");
         return res.toString();
     }
 }
