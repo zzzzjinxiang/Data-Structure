@@ -1,3 +1,8 @@
+package origin;
+
+import origin.Stack;
+import origin.LinkedList;
+
 public class StackLinked<E> implements Stack<E> {
 
     private LinkedList<E> list;
@@ -34,7 +39,7 @@ public class StackLinked<E> implements Stack<E> {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append("Stack:top->");
+        res.append("origin.Stack:top->");
         res.append(list);
         return res.toString();
     }

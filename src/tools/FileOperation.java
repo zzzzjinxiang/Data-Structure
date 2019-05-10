@@ -1,6 +1,10 @@
+package tools;
+
+import origin.Set;
+import origin.Array;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -56,7 +60,7 @@ public class FileOperation {
         return s.length();
     }
 
-    public static double timeGet(String filename,Set<String> set){
+    public static double timeGet(String filename, Set<String> set){
         long startTime = System.nanoTime();
         Array<String> words = new Array<>();
         System.out.println(FileOperation.readFile(filename,words));

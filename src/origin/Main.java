@@ -1,12 +1,14 @@
-import java.util.ArrayList;
+package origin;
+
+import tools.FileOperation;
+
 import java.util.Random;
-import java.util.TreeSet;
 
 public class Main {
 
     public static void main(String[] args) {
-        //Stack.Array Test
-        //Stack.Array arr = new Stack.Array(20);
+        //origin.Stack.origin.Array Test
+        //origin.Stack.origin.Array arr = new origin.Stack.origin.Array(20);
         Array<Integer> arr = new Array<>();
         for(int i=-1;i<9;i++)
             arr.addLast(i);
@@ -20,7 +22,7 @@ public class Main {
         arr.remove(6);
         System.out.println(arr);
 
-        //Stack Test
+        //origin.Stack Test
         StackImpl<Integer> stackArray = new StackImpl<>();
         for(int i=0;i<6;i++){
             stackArray.push(i);
@@ -29,7 +31,7 @@ public class Main {
         stackArray.pop();
         System.out.println(stackArray.peek());
 
-        //Queue Test
+        //origin.Queue Test
         QueueImpl<Integer> queue = new QueueImpl<>();
         for(int i=0;i<5;i++)
             queue.offer(i);
@@ -38,7 +40,7 @@ public class Main {
         queue.poll();
         System.out.println(queue.getFront());
 
-        //LinkedList Test
+        //origin.LinkedList Test
         LinkedList<Integer> list = new LinkedList<>();
         for(int i=0;i<5;i++){
             list.addFirst(i);
@@ -89,9 +91,31 @@ public class Main {
         LinkedSet<String> set3 = new LinkedSet<>();
         System.out.println(FileOperation.timeGet("1.txt",set3));
 
+        long startTime = System.nanoTime();
+        Array<String> words = new Array<>();
+        System.out.println(FileOperation.readFile("1.txt",words));
+        System.out.println("Total words " + words.getSize());
+        BSTMap<String,Integer> map = new BSTMap<>();
+
+        for(int i=0;i<words.getSize();i++){
+            if(map.contains(words.get(i)))
+                map.set(words.get(i),map.get(words.get(i)+1));
+            else map.add(words.get(i),1);
+        }
+        System.out.println(map.getSize());
+        long endTime = System.nanoTime();
+        System.out.println((endTime-startTime)/1000000000.0);
+
+        int num=1000000;
+        MaxHeap<Integer> heap = new MaxHeap<>();
+        Random random = new Random();
+        for(int i = 0;i<num;i++)
+            heap.add(random.nextInt(Integer.MAX_VALUE));
+
+
     }
 
-    public static double testStack(Stack<Integer> stack,int count){
+    public static double testStack(Stack<Integer> stack, int count){
         long startTime = System.nanoTime();
         Random random = new Random();
         for(int i=0;i<count;i++)

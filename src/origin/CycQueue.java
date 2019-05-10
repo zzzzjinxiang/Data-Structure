@@ -1,3 +1,7 @@
+package origin;
+
+import origin.Queue;
+
 public class CycQueue<E> implements Queue<E> {
 
     private E[] queue;
@@ -76,7 +80,7 @@ public class CycQueue<E> implements Queue<E> {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array:size=%d,capacity=%d\n",size,getCapacity()));
+        res.append(String.format("origin.Array:size=%d,capacity=%d\n",size,getCapacity()));
         res.append("front-> [");
         for(int i =front;i!=tail;i=(i+1)%queue.length){
             res.append(queue[i]);

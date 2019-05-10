@@ -1,3 +1,7 @@
+package origin;
+
+import origin.Queue;
+
 public class QueueLinkedList<E> implements Queue<E> {
     private class Node{
         public E e;
@@ -76,7 +80,7 @@ public class QueueLinkedList<E> implements Queue<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("Queue:->front");
+        res.append("origin.Queue:->front");
         Node cur = head;
         while(cur!=null){
             res.append(cur.e+"->");

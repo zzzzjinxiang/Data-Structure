@@ -1,4 +1,9 @@
-public class BSTSet<E extends Comparable<E>> implements Set<E>{
+package origin;
+
+import origin.Set;
+import origin.BST;
+
+public class BSTSet<E extends Comparable<E>> implements Set<E> {
 
     private BST<E> bst;
 
