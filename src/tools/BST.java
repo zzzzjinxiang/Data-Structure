@@ -1,3 +1,5 @@
+package tools;
+
 public class BST<E extends Comparable<E>> {
 
     private class Node{

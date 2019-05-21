@@ -1,3 +1,5 @@
+package tools;
+
 public class LinkedList<E> {
 
     private class Node{

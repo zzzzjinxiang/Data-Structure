@@ -1,3 +1,5 @@
+package tools;
+
 public interface map<K,V> {
 
     boolean isEmpty();

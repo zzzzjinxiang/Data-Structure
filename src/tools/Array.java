@@ -1,3 +1,5 @@
+package tools;
+
 public class Array<E> {
 
     private E[] data;

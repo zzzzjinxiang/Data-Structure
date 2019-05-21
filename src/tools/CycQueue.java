@@ -1,3 +1,5 @@
+package tools;
+
 public class CycQueue<E> implements Queue<E> {
 
     private E[] queue;

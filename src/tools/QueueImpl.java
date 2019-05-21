@@ -1,3 +1,5 @@
+package tools;
+
 public class QueueImpl<E> implements Queue<E> {
 
     private Array<E> array;
@@ -37,7 +39,7 @@ public class QueueImpl<E> implements Queue<E> {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append("Queue:front->");
+        res.append("tools.Queue:front->");
         res.append("[");
         for(int i=0;i<array.getSize();i++){
             res.append(array.get(i));

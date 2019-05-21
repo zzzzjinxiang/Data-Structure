@@ -1,3 +1,5 @@
+package tools;
+
 public class QueueLinkedList<E> implements Queue<E> {
     private class Node{
         public E e;
@@ -76,7 +78,7 @@ public class QueueLinkedList<E> implements Queue<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("Queue:->front");
+        res.append("tools.Queue:->front");
         Node cur = head;
         while(cur!=null){
             res.append(cur.e+"->");

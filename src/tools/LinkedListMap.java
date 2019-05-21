@@ -1,3 +1,5 @@
+package tools;
+
 public class LinkedListMap<K,V> implements map<K,V> {
 
     private class Node{

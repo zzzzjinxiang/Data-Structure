@@ -1,3 +1,5 @@
+package tools;
+
 public class LinkedSet<E> implements Set<E> {
 
     private LinkedList<E> list;

@@ -1,3 +1,5 @@
+package tools;
+
 public interface Stack<E> {
     int getSize();
     boolean isEmpty();

@@ -1,3 +1,5 @@
+package tools;
+
 public class BSTMap<K extends Comparable<K>,V> implements map<K,V> {
 
     private class Node{

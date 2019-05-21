@@ -1,3 +1,5 @@
+package tools;
+
 public class StackLinked<E> implements Stack<E> {
 
     private LinkedList<E> list;
@@ -34,7 +36,7 @@ public class StackLinked<E> implements Stack<E> {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append("Stack:top->");
+        res.append("tools.Stack:top->");
         res.append(list);
         return res.toString();
     }
